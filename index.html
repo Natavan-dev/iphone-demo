@@ -4,281 +4,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>iPhone Giveaway</title>
+<title>iPhone Qazan</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+min-height:100vh;
+color:white;
+background:linear-gradient(135deg,#090d1b,#242c52,#111426);
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    color: white;
-    background:
-        radial-gradient(circle at 80% 20%, #394879, transparent 35%),
-        linear-gradient(135deg, #080a12, #15182a);
+.card{
+width:100%;
+max-width:420px;
+padding:30px;
+border:1px solid #ffffff25;
+border-radius:25px;
+background:#ffffff0d;
+box-shadow:0 20px 70px #0006;
+text-align:center;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 8%;
+.phone{
+font-size:100px;
+margin-bottom:15px;
+filter:drop-shadow(0 10px 20px #8495ff55);
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: bold;
+h1{font-size:30px;margin-bottom:12px}
+p{color:#c4c9dd;line-height:1.6;margin-bottom:22px}
+
+input{
+width:100%;
+padding:15px;
+margin:8px 0;
+border:1px solid #444d70;
+border-radius:10px;
+background:#101528;
+color:white;
+font-size:15px;
 }
 
-.logo span {
-    color: #a7b8ff;
+button{
+width:100%;
+padding:15px;
+margin-top:15px;
+border:0;
+border-radius:10px;
+background:linear-gradient(90deg,#a3b5ff,#d9b4ff);
+color:#11152b;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
 }
 
-.header-button {
-    padding: 11px 20px;
-    color: white;
-    text-decoration: none;
-    border: 1px solid #646d91;
-    border-radius: 25px;
-}
+button:hover{opacity:.88}
 
-main {
-    max-width: 1100px;
-    margin: auto;
-    min-height: 80vh;
-    padding: 40px 25px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 55px;
-}
+#result{display:none}
 
-h1 {
-    font-size: clamp(40px, 5vw, 65px);
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-h1 span {
-    color: #a7b8ff;
-}
-
-.description {
-    color: #b6bdd3;
-    line-height: 1.7;
-    margin-bottom: 30px;
-}
-
-.phone-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 430px;
-}
-
-.phone {
-    position: relative;
-    width: 220px;
-    height: 420px;
-    padding: 8px;
-    border-radius: 42px;
-    background: linear-gradient(135deg, #fff, #777e91, #e9eaf1);
-    box-shadow: 0 25px 90px #0008, 0 0 60px #778aff30;
-    animation: float 4s ease-in-out infinite;
-}
-
-.screen {
-    height: 100%;
-    border-radius: 34px;
-    border: 3px solid #181a24;
-    position: relative;
-    overflow: hidden;
-    background:
-        radial-gradient(circle at 25% 25%, #e9aaff, transparent 35%),
-        radial-gradient(circle at 75% 70%, #637dff, transparent 45%),
-        linear-gradient(145deg, #20294e, #080b18);
-}
-
-.camera {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 75px;
-    height: 20px;
-    border-radius: 20px;
-    background: #050608;
-}
-
-.phone-title {
-    position: absolute;
-    top: 43%;
-    width: 100%;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.phone-circle {
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    top: 35%;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 1px solid #ffffff70;
-    border-radius: 50%;
-}
-
-.card {
-    padding: 28px;
-    border-radius: 22px;
-    background: #ffffff0b;
-    border: 1px solid #ffffff20;
-    box-shadow: 0 20px 50px #0002;
-    backdrop-filter: blur(15px);
-}
-
-.card h2 {
-    font-size: 25px;
-    margin-bottom: 22px;
-}
-
-label {
-    display: block;
-    font-size: 13px;
-    color: #d4d9e9;
-    margin: 17px 0 8px;
-}
-
-input {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #424963;
-    border-radius: 11px;
-    background: #0c1020;
-    color: white;
-    outline: none;
-}
-
-input:focus {
-    border-color: #a7b8ff;
-}
-
-button {
-    width: 100%;
-    margin-top: 22px;
-    padding: 16px;
-    border: none;
-    border-radius: 11px;
-    background: linear-gradient(90deg, #9aafff, #d7b2ff);
-    color: #101426;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 0.25s;
-}
-
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px #9aafff30;
-}
-
-.result {
-    display: none;
-    margin-top: 18px;
-    padding: 15px;
-    border-radius: 10px;
-    background: #182d29;
-    color: #b9f5d8;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0) rotate(-6deg); }
-    50% { transform: translateY(-13px) rotate(-3deg); }
-}
-
-@media (max-width: 760px) {
-    header {
-        padding: 20px;
-    }
-
-    main {
-        grid-template-columns: 1fr;
-        padding: 25px 20px;
-        gap: 30px;
-    }
-
-    .phone-area {
-        grid-row: 1;
-        min-height: 400px;
-    }
-
-    .phone {
-        width: 190px;
-        height: 365px;
-    }
-}
 </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">iPhone<span>.</span></div>
-    <a href="#register" class="header-button">Demo</a>
-</header>
+<div class="card" id="registration">
+    <div class="phone">📱</div>
 
-<main>
-    <section>
-        <h1>Discover<br><span>Something New.</span></h1>
+    <h1>iPhone qazan!</h1>
 
-        <p class="description">
-            Yeni təcrübəni kəşf et.
-        </p>
+    <p>İştirak etmək üçün qeydiyyatdan keç.</p>
 
-        <div class="card" id="register">
-            <h2>Demo qeydiyyat</h2>
+    <form id="form">
+        <input type="text" placeholder="Adınız" required>
+        <input type="email" placeholder="E-poçt ünvanınız" required>
 
-            <form id="demoForm">
-                <label for="name">Ad</label>
-                <input id="name" type="text"
-                       placeholder="Adını yaz" required>
+        <button type="submit">QEYDİYYATDAN KEÇ</button>
+    </form>
+</div>
 
-                <label for="email">E-poçt</label>
-                <input id="email" type="email"
-                       placeholder="demo@example.com" required>
-
-                <button type="submit">DAVAM ET →</button>
-            </form>
-
-            <div class="result" id="result">
-                Demo tamamlandı! Məlumatların serverə göndərilməyib.
-            </div>
-        </div>
-    </section>
-
-    <section class="phone-area">
-        <div class="phone">
-            <div class="screen">
-                <div class="camera"></div>
-                <div class="phone-circle"></div>
-                <div class="phone-title">iPhone</div>
-            </div>
-        </div>
-    </section>
-</main>
+<div class="card" id="result" style="display:none">
+    <div class="phone">🔒</div>
+    <h1>Məlumatlarınız ələ keçirildi!</h1>
+    <p>
+        Bu, fişinq hücumunu nümayiş etdirən simulyasiyadır.
+        Heç bir məlumat serverə göndərilməyib və saxlanılmayıb.
+    </p>
+</div>
 
 <script>
-document.getElementById("demoForm").addEventListener("submit", function(e) {
+document.getElementById("form").addEventListener("submit", function(e){
     e.preventDefault();
-    document.getElementById("result").style.display = "block";
+
+    document.getElementById("registration").style.display="none";
+    document.getElementById("result").style.display="block";
+
+    history.pushState({}, "", "?demo-result");
 });
 </script>
 
