@@ -2,111 +2,194 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>iPhone Qazan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
+    <title>iPhone Hədiyyəsi</title>
 
-body{
-font-family:Arial,sans-serif;
-min-height:100vh;
-color:white;
-background:linear-gradient(135deg,#090d1b,#242c52,#111426);
-display:flex;
-align-items:center;
-justify-content:center;
-padding:20px;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-.card{
-width:100%;
-max-width:420px;
-padding:30px;
-border:1px solid #ffffff25;
-border-radius:25px;
-background:#ffffff0d;
-box-shadow:0 20px 70px #0006;
-text-align:center;
-}
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #101010, #303030);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: white;
+        }
 
-.phone{
-font-size:100px;
-margin-bottom:15px;
-filter:drop-shadow(0 10px 20px #8495ff55);
-}
+        .card {
+            width: 100%;
+            max-width: 420px;
+            background: #fff;
+            color: #222;
+            padding: 35px 25px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 0 35px rgba(255, 255, 255, 0.15);
+        }
 
-h1{font-size:30px;margin-bottom:12px}
-p{color:#c4c9dd;line-height:1.6;margin-bottom:22px}
+        .phone {
+            font-size: 85px;
+            margin-bottom: 15px;
+        }
 
-input{
-width:100%;
-padding:15px;
-margin:8px 0;
-border:1px solid #444d70;
-border-radius:10px;
-background:#101528;
-color:white;
-font-size:15px;
-}
+        h1 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
 
-button{
-width:100%;
-padding:15px;
-margin-top:15px;
-border:0;
-border-radius:10px;
-background:linear-gradient(90deg,#a3b5ff,#d9b4ff);
-color:#11152b;
-font-size:15px;
-font-weight:bold;
-cursor:pointer;
-}
+        .description {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
 
-button:hover{opacity:.88}
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+        }
 
-#result{display:none}
+        input:focus {
+            border-color: #111;
+        }
 
-</style>
+        button {
+            width: 100%;
+            padding: 16px;
+            background: #111;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #444;
+            transform: scale(1.02);
+        }
+
+        .small {
+            font-size: 12px;
+            color: #777;
+            margin-top: 18px;
+        }
+
+        #warning {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: #e00000;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 25px;
+            z-index: 10;
+        }
+
+        #warning h2 {
+            font-size: clamp(38px, 9vw, 70px);
+            margin-bottom: 20px;
+        }
+
+        #warning p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        #warning button {
+            max-width: 240px;
+            margin-top: 25px;
+            background: white;
+            color: #c00;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="card" id="registration">
-    <div class="phone">📱</div>
+    <main class="card" id="registration">
 
-    <h1>iPhone qazan!</h1>
+        <div class="phone">📱</div>
 
-    <p>İştirak etmək üçün qeydiyyatdan keç.</p>
+        <h1>iPhone qazanın!</h1>
 
-    <form id="form">
-        <input type="text" placeholder="Adınız" required>
-        <input type="email" placeholder="E-poçt ünvanınız" required>
+        <p class="description">
+            Hədiyyə kampaniyasında iştirak etmək üçün
+            qeydiyyat formasını doldurun.
+        </p>
 
-        <button type="submit">QEYDİYYATDAN KEÇ</button>
-    </form>
-</div>
+        <form id="form">
 
-<div class="card" id="result" style="display:none">
-    <div class="phone">🔒</div>
-    <h1>Məlumatlarınız ələ keçirildi!</h1>
-    <p>
-        Bu, fişinq hücumunu nümayiş etdirən simulyasiyadır.
-        Heç bir məlumat serverə göndərilməyib və saxlanılmayıb.
-    </p>
-</div>
+            <input
+                type="text"
+                id="name"
+                placeholder="Adınız"
+                autocomplete="off"
+                required
+            >
 
-<script>
-document.getElementById("form").addEventListener("submit", function(e){
-    e.preventDefault();
+            <input
+                type="email"
+                id="email"
+                placeholder="E-poçt ünvanınız"
+                autocomplete="off"
+                required
+            >
 
-    document.getElementById("registration").style.display="none";
-    document.getElementById("result").style.display="block";
+            <button type="submit">
+                QEYDİYYATDAN KEÇ
+            </button>
 
-    history.pushState({}, "", "?demo-result");
-});
-</script>
+        </form>
+
+        <p class="small">
+            Təhlükəsizlik nümayişi üçün hazırlanmış demo.
+            Real hədiyyə vədi deyil.
+        </p>
+
+    </main>
+
+    <section id="warning">
+        <h2>HACKLƏNDİNİZ!</h2>
+
+        <p>
+            Bu, təhlükəsizlik nümayişidir.<br>
+            Şübhəli saytlara şəxsi məlumatlarınızı daxil etməyin.
+        </p>
+
+        <button onclick="location.reload()">
+            BAŞA DÜŞDÜM
+        </button>
+    </section>
+
+    <script>
+        const form = document.getElementById("form");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("registration").style.display = "none";
+            document.getElementById("warning").style.display = "flex";
+        });
+    </script>
 
 </body>
 </html>
