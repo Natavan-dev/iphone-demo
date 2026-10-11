@@ -1,0 +1,264 @@
+```html
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iPhone Demo</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #28345c, #080b15 65%);
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #9daeff;
+}
+
+.badge {
+    padding: 9px 15px;
+    border: 1px solid #424d71;
+    border-radius: 25px;
+    color: #cbd3ff;
+    font-size: 12px;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 55px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.content {
+    flex: 1;
+}
+
+h1 {
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.1;
+    margin-bottom: 22px;
+}
+
+h1 span {
+    color: #a7b5ff;
+}
+
+.description {
+    color: #b4bad0;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    max-width: 500px;
+}
+
+.card {
+    padding: 24px;
+    border: 1px solid #343b55;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.06);
+    max-width: 470px;
+}
+
+.card h2 {
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #b4bad0;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.phone-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.phone {
+    width: 205px;
+    height: 390px;
+    border: 7px solid #a9acb8;
+    border-radius: 38px;
+    background:
+        radial-gradient(circle at 30% 30%, #e0aaff, transparent 35%),
+        radial-gradient(circle at 70% 70%, #597bff, transparent 40%),
+        linear-gradient(145deg, #172044, #090b18);
+    box-shadow: 0 20px 70px #0009, 0 0 50px #7285ff33;
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+}
+
+.camera {
+    width: 65px;
+    height: 18px;
+    background: #050609;
+    border-radius: 20px;
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.phone-text {
+    position: absolute;
+    top: 42%;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.phone-small {
+    position: absolute;
+    bottom: 35px;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 22px;
+    background: linear-gradient(90deg, #9daeff, #d7aaff);
+    color: #101426;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: 0.25s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px #9daeff44;
+}
+
+.notice {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #aab1c6;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #ffffff15;
+    color: #8991a8;
+    font-size: 12px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-6deg); }
+    50% { transform: translateY(-15px) rotate(-3deg); }
+}
+
+@media (max-width: 750px) {
+    main {
+        flex-direction: column-reverse;
+        padding-top: 25px;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .phone-area {
+        min-height: 350px;
+    }
+
+    .phone {
+        width: 175px;
+        height: 335px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    .badge {
+        font-size: 9px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">iPhone<span>Demo.</span></div>
+    <div class="badge">TƏHLÜKƏSİZLİK TƏLİMİ</div>
+</header>
+
+<main>
+    <section class="content">
+        <h1>Texnologiyanı<br><span>kəşf et.</span></h1>
+
+        <p class="description">
+            Bu interaktiv demo internetdəki hədiyyə elanlarını
+            qiymətləndirməyi və şəxsi məlumatları qorumağı öyrədir.
+        </p>
+
+        <div class="card">
+            <h2>📱 iPhone kampaniyası</h2>
+
+            <p>
+                Bu səhifə kibertəhlükəsizlik maarifləndirilməsi
+                məqsədilə hazırlanmış nümunədir. Real hədiyyə
+                kampaniyası deyil.
+            </p>
+
+            <a href="#notice" class="button">DEMONU KƏŞF ET →</a>
+
+            <p class="notice" id="notice">
+                🛡️ Təhlükəsizlik qaydası: şübhəli saytlara real
+                parolunu və bank məlumatlarını daxil etmə.
+            </p>
+        </div>
+    </section>
+
+    <section class="phone-area">
+        <div class="phone">
+            <div class="camera"></div>
+            <div class="phone-text">iPhone</div>
+            <div class="phone-small">THINK BEFORE YOU CLICK</div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    Təhlükəsizlik maarifləndirilməsi üçün demo layihə.
+    Real məlumatlar toplanmır.
+</footer>
+
+</body>
+</html>
+```
